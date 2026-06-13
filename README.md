@@ -42,6 +42,8 @@ To guarantee absolute isolation and prevent overlap with external network infras
 1. **GPO Engineering:** Built and deployed a dedicated Group Policy Object (GPO) titled `Desktop Restriction Policy` structurally linked directly to the `Lab Users` OU.
 2. **Registry-Level Enforcement:** Navigated administrative template nodes to execute policy directive: *Prohibit access to Control Panel and PC settings*.
 3. **Engine Refresh Optimization:** Used the administrative command-line interface to push immediate background policy synchronization (`gpupdate /force`).
+4. <img width="3414" height="1314" alt="Screenshot 2026-06-13 010705" src="https://github.com/user-attachments/assets/db657eba-a403-4265-a95e-0448591ef069" />
+
 
 ### Phase 3: Client Provisioning & Active Directory Integration
 1. **OOBE Local Bypass:** Bypassed cloud hardware enforcement mechanisms during the Windows 11 Out-of-Box Experience via command line execution (`OOBE\BYPASSNRO`) to provision local fallback profiles.
@@ -54,3 +56,4 @@ To guarantee absolute isolation and prevent overlap with external network infras
 * **Network Verification:** Verified localized network transit capabilities via command-line ICMP probing (`ping homelab.local`), yielding 0% packet loss and sub-1ms transit latency.
 * **Authentication Handshake:** Logged out of local administrative states and successfully authenticated against the active directory database using the domain user structure (`HOMELAB\ahadi`).
 * **Policy Compliance Proof:** Attempted to launch the Windows 11 Settings Engine and Control Panel under the managed user context. The system kernel actively intercepted and dropped the process call, proving 100% Group Policy compliance and security rule replication.
+<img width="1685" height="976" alt="Screenshot 2026-06-13 132227" src="https://github.com/user-attachments/assets/a017bbac-20ca-48d0-84dc-3e59495d9d38" />
