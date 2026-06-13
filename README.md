@@ -19,7 +19,9 @@ This project demonstrates the deployment of a foundational corporate IT infrastr
 ### Phase 2: Security & Group Policy Enforcement
 1. **GPO Creation:** Engineered a custom Group Policy Object (GPO) titled `Desktop Restriction Policy` linked directly to the `Lab Users` OU.
 2. **Workstation Hardening:** Configured administrative registry templates to completely prohibit user access to the Control Panel and PC Settings apps (`gpedit` enforcement).
-3. **Policy Synchronization:** Forced manual background engine refreshes using the command-line interface (`gpupdate /force`) to guarantee instant replication.
+3. <img width="3414" height="1314" alt="Screenshot 2026-06-13 010705" src="https://github.com/user-attachments/assets/c796af4c-ee49-4623-a06d-18e266eba49d" />
+
+4. **Policy Synchronization:** Forced manual background engine refreshes using the command-line interface (`gpupdate /force`) to guarantee instant replication.
 
 ## 🔍 Validation & Testing
 * Verified Active Directory health and catalog storage targets inside `C:\Windows\NTDS`.
