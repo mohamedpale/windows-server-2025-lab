@@ -57,3 +57,26 @@ To guarantee absolute isolation and prevent overlap with external network infras
 * **Authentication Handshake:** Logged out of local administrative states and successfully authenticated against the active directory database using the domain user structure (`HOMELAB\ahadi`).
 * **Policy Compliance Proof:** Attempted to launch the Windows 11 Settings Engine and Control Panel under the managed user context. The system kernel actively intercepted and dropped the process call, proving 100% Group Policy compliance and security rule replication.
 <img width="1685" height="976" alt="Screenshot 2026-06-13 132227" src="https://github.com/user-attachments/assets/a017bbac-20ca-48d0-84dc-3e59495d9d38" />
+---
+
+# Project 3: Secure Corporate File Server Deployment (NAS Simulation)
+
+## 📌 Project Overview
+This project details the creation and deployment of a centralized, secure network file storage pool (Network Attached Storage simulation) managed directly by the Windows Server 2025 domain controller. The objective was to configure custom network shares and partition folder directory clearances using strict Access Control Lists (ACLs) to protect corporate financial assets while maintaining open collaboration folders for staff.
+
+## ⚙️ Implementation & Permission Scoping
+
+1. **Directory Tree Architecture:** Created a centralized root pool `C:\CorpShares` on the server storage volume housing two specific departmental sub-folders: `Accounting` and `Public`.
+2. **Network Share Provisioning:** Provisioned advanced network sharing flags across the environment mapping the absolute Universal Naming Convention (UNC) paths (`\\192.168.10.10\Accounting` & `\\192.168.10.10\Public`).
+3. **Role-Based Access Control (RBAC):**
+   * **Public Share:** Configured network share permissions to grant `Everyone` change and read privileges to allow open document collaboration.
+   * **Accounting Share:** Stripped default administrative inherited inheritance pathways. Configured explicit Share and NTFS permission boundaries to explicitly block standard user parameters, restricting data traffic solely to authorized infrastructure administrators.
+
+## 🔍 Validation & Testing Proof
+<img width="1345" height="1052" alt="Screenshot 2026-06-13 163604" src="https://github.com/user-attachments/assets/91c62ceb-d622-44a5-b9ef-401017ce728f" />
+<img width="1335" height="981" alt="Screenshot 2026-06-13 164402" src="https://github.com/user-attachments/assets/9014f924-31fa-4368-b100-8db7186eb1bf" />
+
+* Successfully executed a remote network path routing loop from the Windows 11 client machine (`\\192.168.10.10`).
+* Verified folder structural boundaries: The client successfully interacted with the `Public` directory, while attempts to access the protected `Accounting` zone were actively dropped at the network kernel level with a **"Permission Denied / Access Is Denied"** security block.
+* <img width="1405" height="1001" alt="Screenshot 2026-06-13 164301" src="https://github.com/user-attachments/assets/824e235b-712c-4089-a57b-cd19c44f37c3" />
+<img width="1387" height="994" alt="Screenshot 2026-06-13 165126" src="https://github.com/user-attachments/assets/cb283ebe-c706-4b62-88e0-020d16e6e95f" />
