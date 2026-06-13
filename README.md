@@ -1,6 +1,22 @@
 # Windows Server 2025 Homelab: Active Directory & GPO Infrastructure
 
 ## 📌 Project Overview
+### 🎛️ Host System Capabilities
+* **Hypervisor Platform:** VMware Workstation Pro
+* **Virtual Network Mapping:** Custom Host-Only Virtual Switch Subnet (`VMnet10`)
+* **DHCP Configuration:** Disabled (All addressing manually assigned to prevent allocation conflicts)
+
+### 📊 Provisioned Compute Resources
+
+| VM Name / Role | OS Platform | vCPU Cores | RAM Allocation | Storage Allocation | Network Layer |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **WIN-DC01** (Primary Domain Controller) | Windows Server 2025 | 2 Cores | 4 GB DDR4 | 60 GB NVMe (Thin) | Static IP: `192.168.10.10` |
+| **WIN-CL01** (Workstation Client Node) | Windows 10 Pro / 11 Pro | 2 Cores | 4 GB DDR4 | 40 GB NVMe (Thin) | Static IP: `192.168.10.20` |
+
+### 🌐 Network Routing Layer
+* **Subnet Mask:** `255.255.255.0` (/24 Class C Network)
+* **Primary Gateway Identifier:** `192.168.10.1`
+* **Primary Domain Resolution (DNS):** `192.168.10.10` (Points directly to loopback Active Directory zone mapping)
 This project demonstrates the deployment of a foundational corporate IT infrastructure using Windows Server 2025 within a virtualized sandbox environment (VMware Workstation). The goal was to build a secure, scalable directory domain from scratch to simulate real-world enterprise system administration.
 
 ## 🛠️ Technologies & Skills Used
